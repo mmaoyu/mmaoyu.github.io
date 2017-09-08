@@ -4,10 +4,10 @@ title:  zookeeper启动流程
 categories:
 - zookeeper
 tags:
-- zookeeper启动流程
+- 分布式
 ---
 
-test 我的博客
+我的博客
 
 
 
