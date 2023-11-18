@@ -27,6 +27,7 @@ tags:
 > 抓包
 > - tcpdump -i <网卡名> -w issue.pcap
 > 包中有大量的retransmission 包，包被重传了
+>
 > ![p1.jpeg](/images/sre/tcp/20231107/p1.jpeg)
 
 > 包被重传的场景
