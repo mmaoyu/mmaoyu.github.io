@@ -45,8 +45,8 @@ tags:
 >每隔5秒输出，信息解释如下（也可以使用man vmstat查看每一列的解释）：
 > ![p_vmstat_1.png](/images/sre/perfermance/p_vmstat_1.png)
 
-### 结论 ###
-###cpu密集型机器：
+### 结论
+cpu密集型机器：
 - vmstat
   1. us 列高或者sy高
   2. sy超过20%需要关注
