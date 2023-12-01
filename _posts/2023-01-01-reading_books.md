@@ -11,6 +11,5 @@ tags:
 ---
 
 > 2023     
+>- Site reliability engineering: how google runs production systems   \[2023-11-25 ~ ?\]
 >
->- google sre  [2023-11-25 ~ ?]
->  

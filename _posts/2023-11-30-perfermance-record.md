@@ -14,37 +14,39 @@ tags:
 ---
 
 > 系统io/cpu数据采集，输出到当前目录的iostat.log
-
-`iostat -dx 5 |tee iostat.log.$(date '+%Y_%m_%d_%H_%M_%S')`
-
+>
+> `iostat -dx 5 |tee iostat.log.$(date '+%Y_%m_%d_%H_%M_%S')`
+>
 > cpu内存数据采集，输出到当前目录的vmstat.log
-
-`vmstat 5 |tee  vmstat.log.$(date '+%Y_%m_%d_%H_%M_%S')`
-
+>
+>`vmstat 5 |tee  vmstat.log.$(date '+%Y_%m_%d_%H_%M_%S')`
+>
 > 进程数据采集，输出到当前目录的pidstat.log
+>
+>`pidstat -du 5 | tee pidstat.log.$(date '+%Y_%m_%d_%H_%M_%S')`
 
-`pidstat -du 5 | tee pidstat.log.$(date '+%Y_%m_%d_%H_%M_%S')`
-
-### 日志解释
-### iostat.log
-
-#### 每隔5秒，输出磁盘io统计信息，信息解释如下（也可以使用man iostat查看每一列的解释）
-
+> 日志解释
+>- iostat.log
+>
+>#### 每隔5秒，输出磁盘io统计信息，信息解释如下（也可以使用man iostat查看每一列的解释）
+>
 > ![p_iostat_1.png](/images/sre/perfermance/p_iostat_1.png)
-
+>
 > 磁盘并发数计算：
-concurrency=(r/s+w/s) * (svctm/1000)
-
+>
+>concurrency=(r/s+w/s) * (svctm/1000)
+>
 > 一般需要计算%util 为100%时的并发数，如果并发数为1，即为磁盘串行，raid的并发数会好
-如果多磁盘并发数=1，需要考虑文件系统串行问题
-
-### vmstat.log
-
-每隔5秒输出，信息解释如下（也可以使用man vmstat查看每一列的解释）：
+>
+>如果多磁盘并发数=1，需要考虑文件系统串行问题
+>
+>- vmstat.log
+>
+>每隔5秒输出，信息解释如下（也可以使用man vmstat查看每一列的解释）：
 > ![p_vmstat_1.png](/images/sre/perfermance/p_vmstat_1.png)
 
-### 结论
-cpu密集型机器：
+### 结论 ###
+###cpu密集型机器：
 - vmstat
   1. us 列高或者sy高
   2. sy超过20%需要关注
