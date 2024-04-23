@@ -81,7 +81,11 @@ follow:
 #Links
 customLinks:
   - item:
-    message: Friends
+    - text: fred
+      url: https://kenshinji.me/
+    - text: laixintao
+      url: https://www.kawabangga.com  
+    message: Blogs
   - item:
     - text: Font Awesome
       url: https://fortawesome.github.io/Font-Awesome/
@@ -89,7 +93,7 @@ customLinks:
       url: https://www.google.com/fonts/
     - text: jQuery
       url: https://jquery.com/
-    message: 其他相关链接
+    message: Others
 
 #googleAnaly, your id link UA-12345678-X
 #googleAnaly:
