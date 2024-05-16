@@ -96,9 +96,9 @@ customLinks:
     message: Others
 
 #googleAnaly, your id link UA-12345678-X
-#googleAnaly:
-#  config: true
-# id: 
+googleAnaly:
+ config: true
+id: G-J8WRJVWZLG
 
 #comment config
 #disqus:
