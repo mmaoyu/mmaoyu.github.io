@@ -24,3 +24,5 @@ protocol=https   ⏎
 
 ⏎
 
+
+git commit --amend --author="mmaoyu <wupiaoyu61@gmail.com>"
