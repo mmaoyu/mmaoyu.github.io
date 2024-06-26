@@ -84,7 +84,9 @@ customLinks:
     - text: fred
       url: https://kenshinji.me/
     - text: laixintao
-      url: https://www.kawabangga.com  
+      url: https://www.kawabangga.com
+    - text: plantegg
+      url: https://plantegg.github.io  
     message: Blogs
   - item:
     - text: Font Awesome
