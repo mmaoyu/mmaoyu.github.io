@@ -40,9 +40,9 @@ timezone:      null
 
 
 #Site config
-title: Coding daily
-description: Records coding daily for mmaoyu.
-keywords: mmaoyu coding
+title: Mmaoyu's Daily
+description: Mmaoyu's Daily.
+keywords: mmaoyu daily
 url: https://mmaoyu.github.io
 feed: /atom.xml
 favicon: https://avatars0.githubusercontent.com/u/4112583
