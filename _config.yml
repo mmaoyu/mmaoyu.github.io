@@ -41,8 +41,8 @@ timezone:      null
 
 #Site config
 title: Mmaoyu's Daily
-description: Mmaoyu's Daily.
-keywords: mmaoyu daily
+description: Life and coding.
+keywords: mmaoyu coding daily
 url: https://mmaoyu.github.io
 feed: /atom.xml
 favicon: https://avatars0.githubusercontent.com/u/4112583
@@ -86,7 +86,10 @@ customLinks:
     - text: laixintao
       url: https://www.kawabangga.com
     - text: plantegg
-      url: https://plantegg.github.io  
+      url: https://plantegg.github.io
+    - text: hjiang
+      url: https://1byte.io
+        
     message: Blogs
   - item:
     - text: Font Awesome
