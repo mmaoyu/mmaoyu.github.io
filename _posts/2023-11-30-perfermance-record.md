@@ -44,6 +44,21 @@ tags:
 >
 >每隔5秒输出，信息解释如下（也可以使用man vmstat查看每一列的解释）：
 > ![p_vmstat_1.png](/images/sre/perfermance/p_vmstat_1.png)
+>
+#### 查询swap占用进程
+```
+ overall=0
+for status_file in /proc/[0-9]*/status; do
+    swap_mem=$(grep VmSwap "$status_file" | awk '{ print $2 }')
+    if [ "$swap_mem" ] && [ "$swap_mem" -gt 0 ]; then
+        pid=$(grep Tgid "$status_file" | awk '{ print $2 }')
+        name=$(grep Name "$status_file" | awk '{ print $2 }')
+        printf "%s\t%s\t%s KB\n" "$pid" "$name" "$swap_mem"
+    fi
+    overall=$((overall+swap_mem))
+done
+printf "Total Swapped Memory: %14u KB\n" $overall
+```
 
 ### 结论
 cpu密集型机器：
@@ -65,7 +80,13 @@ io密集型机器：
 内存交换严重
 - vmstat
   1. si 和so有高值
-
+- 修改swapiness
+  ```
+  sudo sysctl vm.swappiness=1
+  vi /etc/sysctl.conf
+  vm.swappiness=1
+  sysctl -p
+  ```
 磁盘结论：
 - 传统盘< ssd
 - 传统盘：raid 10，缓存配置writeBack策略，大部分可以运行良好
