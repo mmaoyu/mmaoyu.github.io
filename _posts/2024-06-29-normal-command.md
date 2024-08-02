@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Important articles
+title:  Normal command
 categories:
 - article
 tags:
