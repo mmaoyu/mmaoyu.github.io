@@ -25,3 +25,14 @@ tags:
    curl http://127.0.0.1:2020/healthCheck --connect-timeout 5 --max-time 5 -vvv
 
  ```
+
+### too many openfiles
+```
+ # processes open files
+ lsof | awk '{ print $1 " " $2; }' | sort -rn | uniq -c | sort -rn | head -15
+ lsof -p <process_id>
+
+ # system limit
+ ulimit -a
+
+```
